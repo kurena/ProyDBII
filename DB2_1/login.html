@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+
+    <title>DASHGUM - Bootstrap Admin Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <!--external css-->
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        
+    <!-- Custom styles for this template -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style-responsive.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="assets/js/gritter/css/jquery.gritter.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/datePicker/datepicker.css" />
+  </head>
+  <body>
+  <style>
+      .datepicker{z-index:1151 !important;}
+  </style>
+
+      <!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+
+	  <div id="login-page">
+	  	<div class="container">
+
+		      <div class="form-login">
+		        <h2 class="form-login-heading">inicie sesión</h2>
+		        <div class="login-wrap">
+		            <input type="text" class="form-control has-error codUsuario" placeholder="Código de Usuario" value="dfernandezs" autofocus>
+		            <br>
+		            <input type="password" class="form-control passUsuario" placeholder="Contraseña" value="progra">
+		            <label class="checkbox">
+		                <span class="pull-right">
+		                    <a data-toggle="modal" href="login.html#myModal"> no recuerdas tu contraseña?</a>
+		                </span>
+		            </label>
+		            <button class="btn btn-theme btn-block acceder"><i class="fa fa-lock"></i> Acceder</button>
+		            <hr>
+
+		            <div class="registration">
+		                Aun no tienes una contraseña?<br/>
+		                <a data-toggle="modal" class="" href="login.html#newUserModal">
+		                    Crear una Cuenta
+		                </a>
+		            </div>
+		
+		        </div>
+		
+		          <!-- Modal -->
+		          <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
+		              <div class="modal-dialog">
+		                  <div class="modal-content">
+		                      <div class="modal-header">
+		                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		                          <h4 class="modal-title"> No recuerdas tu contraseña?</h4>
+		                      </div>
+		                      <div class="modal-body">
+		                          <p>Ingresa tu Email para enviarte una nueva contraseña</p>
+		                          <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
+		                      </div>
+		                      <div class="modal-footer">
+		                          <button data-dismiss="modal" class="btn btn-default" type="button">Cancelar</button>
+		                          <button data-dismiss="modal" class="btn btn-theme" type="button">Enviar</button>
+		                      </div>
+		                  </div>
+		              </div>
+		          </div>
+		          <!-- modal -->
+
+                  <!-- Modal -->
+                  <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="newUserModal" class="modal fade">
+                      <div class="modal-dialog">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                  <h4 class="modal-title"> Crear nuevo Usuario - Rol Estudiante</h4>
+                              </div>
+                              <div class="modal-body">
+                                  <h4><i class="fa fa-angle-right"></i> Datos Personales</h4><br/>
+                                  <div class="row form-group">
+                                      <label class="col-sm-2 col-sm-2 control-label">Cedula*</label>
+                                      <div class="col-sm-7">
+                                          <input type="text" class="form-control" id="formCedula">
+                                      </div>
+                                      <div class="col-sm-3 text-right">
+                                          <button class="btn btn-default findPerson" type="button"><i class="fa fa-search"></i> Buscar</button>
+                                      </div>
+                                  </div>
+                                  <div class="row form-group">
+                                      <label class="col-sm-2 col-sm-2 control-label">Nombre*</label>
+                                      <div class="col-sm-10">
+                                          <input type="text" class="form-control" id="formnombre">
+                                      </div>
+                                  </div>
+                                  <div class="row form-group">
+                                      <label class="col-sm-2 col-sm-2 control-label">Apellido 1*</label>
+                                      <div class="col-sm-4">
+                                          <input type="text" class="form-control" id="formape1">
+                                      </div>
+                                      <label class="col-sm-2 col-sm-2 control-label">Apellido 2*</label>
+                                      <div class="col-sm-4">
+                                          <input type="text" class="form-control" id="formape2">
+                                      </div>
+                                  </div>
+                                  <div class="row form-group">
+                                      <label class="col-sm-2 col-sm-2 control-label">Direecion*</label>
+                                      <div class="col-sm-10">
+                                          <input type="text" class="form-control" id="formdireccion">
+                                      </div>
+                                  </div>
+                                  <div class="row form-group">
+                                      <label class="col-sm-2 col-sm-2 control-label">Numero Tel*</label>
+                                      <div class="col-sm-4">
+                                          <input type="text" class="form-control" id="formtel">
+                                      </div>
+                                      <label class="col-sm-2 col-sm-2 control-label">Email*</label>
+                                      <div class="col-sm-4">
+                                          <input type="text" class="form-control" id="formemail">
+                                      </div>
+                                  </div>
+                                  <div class="row form-group">
+                                      <label class="col-sm-2 col-sm-2 control-label">Fec Nacimiento*</label>
+                                      <div class="col-sm-10">
+                                          <input type="text" class="form-control datepicker" data-date-format="dd/mm/yyyy" id="formfecNaci">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="modal-footer">
+                                  <button data-dismiss="modal" class="btn btn-default" type="button">Cancelar</button>
+                                  <button data-dismiss="modal" class="btn btn-theme sendNewUser" type="button">Enviar</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- modal -->
+		
+		      </div>
+	  	
+	  	</div>
+	  </div>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/controllers/login_Controller.js"></script>
+
+    <script type="text/javascript" src="assets/js/gritter/js/jquery.gritter.js"></script>
+    <script type="text/javascript" src="assets/js/gritter-conf.js"></script>
+
+    <script type="text/javascript" src="assets/js/utilities/funsComunes.js"></script>
+
+      <script type="text/javascript" src="assets/js/datePicker/bootstrap-datepicker.js"></script>
+
+    <!--BACKSTRETCH-->
+    <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
+    <script type="text/javascript" src="assets/js/jquery.backstretch.min.js"></script>
+    <script>
+        initBackDroop.init();
+        initControls.init();
+    </script>
+  </body>
+</html>
