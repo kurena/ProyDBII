@@ -28,7 +28,9 @@ switch ($_POST['genericMethod']) {
                            $_POST['tipPersonaIn'],
                            $_POST['numCatPersonaIn'],
                            $_POST['numGraAcaPersonaIn'],
-                           $_POST['numNotaPersonaIn']);
+                           $_POST['numNotaPersonaIn'],
+                           $_POST['codUserIn'],
+                           $_POST['passUserIn']);
         break;
 }
 
@@ -109,7 +111,9 @@ function fnCretaePersonUser($cedPersonaIn,
                             $tipPersonaIn,
                             $numCatPersonaIn,
                             $numGraAcaPersonaIn,
-                            $numNotaPersonaIn){
+                            $numNotaPersonaIn,
+                            $codUserIn,
+                            $passUserIn){
 
     $linkConnection = Conexion::getInstancia();
 
@@ -128,6 +132,8 @@ function fnCretaePersonUser($cedPersonaIn,
                                                 null,
                                                 null,
                                                 null,
+                                                :codUserIn,
+                                                :passUserIn,
                                                 :resultOut);
             END;';
 
@@ -147,11 +153,20 @@ function fnCretaePersonUser($cedPersonaIn,
     //oci_bind_by_name($stmt,':numCatPersonaIn',$numCatPersonaIn,32);
     //oci_bind_by_name($stmt,':numGraAcaPersonaIn',$numGraAcaPersonaIn,32);
     //oci_bind_by_name($stmt,':numNotaPersonaIn',$numNotaPersonaIn,32);
+    oci_bind_by_name($stmt,':codUserIn',$codUserIn,32);
+    oci_bind_by_name($stmt,':passUserIn',$passUserIn,32);
     oci_bind_by_name($stmt,':resultOut',$resultOut,32);
 
     oci_execute($stmt);
 
     Conexion::desconectar();
+
+    if ($resultOut == "Win") {
+        $file = '../profilesIms/newDefaultUser.png';
+        $newfile = '../profilesIms/'.$codUserIn.".png";
+
+        copy($file, $newfile);
+    }
 
     echo $resultOut;
 }

@@ -93,6 +93,8 @@ var initControls = function() {
 
          $('.sendNewUser').click(function () {
              var JSONvar = {};
+             var userName = $('#formnombre').val().substring(0, 1) + $('#formape1').val() + $('#formape2').val().substring(0, 1);
+
              JSONvar['genericMethod'] = 'createPersonUser';
              JSONvar["cedPersonaIn"] = $('#formCedula').val();
              JSONvar["nomPersonaIn"] = $('#formnombre').val();
@@ -108,15 +110,15 @@ var initControls = function() {
              JSONvar["numCatPersonaIn"] = 'null';
              JSONvar["numGraAcaPersonaIn"] = 'null';
              JSONvar["numNotaPersonaIn"] = 'null';
-
-             console.log(JSONvar);
+             JSONvar["codUserIn"] = userName.toLowerCase();
+             JSONvar["passUserIn"] = 'progra';
 
              $.ajax({
                  data:  JSONvar,
                  url:   'assets/php/login.php',
                  type:  'post',
                  beforeSend: function () {
-                     /*Logic Here*/
+                     //Logic Here
                  },
                  success:  function (response) {
                     console.log(response);

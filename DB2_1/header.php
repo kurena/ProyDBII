@@ -79,69 +79,55 @@
                       </a>
                   </li>
 
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-desktop"></i>
-                          <span>UI Elements</span>
+                  <li>
+                      <a href="frmCrearMatricula.php">
+                          <i class="fa fa-puzzle-piece"></i>
+                          <span>Crear Matricula</span>
                       </a>
-                      <ul class="sub">
-                          <li><a  href="general.html">General</a></li>
-                          <li><a  href="buttons.html">Buttons</a></li>
-                          <li><a  href="panels.html">Panels</a></li>
-                      </ul>
                   </li>
 
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-cogs"></i>
-                          <span>Components</span>
+                  <li>
+                      <a href="#">
+                          <i class="fa fa-pencil-square-o"></i>
+                          <span>Asigacion de Notas</span>
                       </a>
-                      <ul class="sub">
-                          <li><a  href="calendar.html">Calendar</a></li>
-                          <li><a  href="gallery.html">Gallery</a></li>
-                          <li><a  href="todo_list.html">Todo List</a></li>
-                      </ul>
                   </li>
-                  <li class="sub-menu">
-                      <a class="active" href="javascript:;" >
-                          <i class="fa fa-book"></i>
-                          <span>Extra Pages</span>
+
+                  <li>
+                      <a href="#">
+                          <i class="fa fa-wrench"></i>
+                          <span>Mantenimientos</span>
                       </a>
-                      <ul class="sub">
-                          <li class="active"><a  href="blank.html">Blank Page</a></li>
-                          <li><a  href="login.html">Login</a></li>
-                          <li><a  href="lock_screen.html">Lock Screen</a></li>
-                      </ul>
                   </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-tasks"></i>
-                          <span>Forms</span>
+
+                  <li>
+                      <a href="#">
+                          <i class="fa fa-clock-o"></i>
+                          <span>Horarios</span>
                       </a>
-                      <ul class="sub">
-                          <li><a  href="form_component.html">Form Components</a></li>
-                      </ul>
                   </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-th"></i>
-                          <span>Data Tables</span>
+
+                  <li>
+                      <a href="#">
+                          <i class="fa fa-graduation-cap"></i>
+                          <span>Consulta de Notas</span>
                       </a>
-                      <ul class="sub">
-                          <li><a  href="basic_table.html">Basic Table</a></li>
-                          <li><a  href="responsive_table.html">Responsive Table</a></li>
-                      </ul>
                   </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class=" fa fa-bar-chart-o"></i>
-                          <span>Charts</span>
+
+                  <li>
+                      <a href="#">
+                          <i class="fa fa-newspaper-o"></i>
+                          <span>Noticias</span>
                       </a>
-                      <ul class="sub">
-                          <li><a  href="morris.html">Morris</a></li>
-                          <li><a  href="chartjs.html">Chartjs</a></li>
-                      </ul>
                   </li>
+
+                  <li>
+                      <a href="#">
+                          <i class="fa fa-university"></i>
+                          <span>Acerca de.</span>
+                      </a>
+                  </li>
+
               </ul>
               <!-- sidebar menu end-->
           </div>
