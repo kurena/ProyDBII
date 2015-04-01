@@ -93,11 +93,16 @@
                       </a>
                   </li>
 
-                  <li>
-                      <a href="#">
-                          <i class="fa fa-wrench"></i>
+                  <li class="sub-menu">
+                      <a href="javascript:;">
+                          <i class="fa fa-book"></i>
                           <span>Mantenimientos</span>
                       </a>
+                      <ul class="sub">
+                          <li class="active"><a  href="frmMantTurno.php">Turno</a></li>
+                          <li><a  href="frmMantPais.php">Países</a></li>
+                          <li><a  href="#">Clase</a></li>
+                      </ul>
                   </li>
 
                   <li>

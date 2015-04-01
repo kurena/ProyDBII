@@ -27,7 +27,7 @@ function fnGetPersonByID($numPersona){
 
     $registros = oci_new_cursor($linkConnection);
 
-    oci_bind_by_name($stmt,":c_persona_cursos",$registros,-1,OCI_B_CURSOR);
+    oci_bind_by_name($stmt,":c_persona_cursos",$registros,-1,SQLT_RSET);
 
     oci_execute($stmt);
 
