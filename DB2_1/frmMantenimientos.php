@@ -20,7 +20,7 @@
                     <div class="form-panel">
                         <ul>
                             <li><a href="#"> <h4 class="mb"><i class="fa fa-cogs"></i> Mantenimiento de Grupos</h4> </a></li>
-                            <li><a href="#"> <h4 class="mb"><i class="fa fa-cogs"></i> Mantenimiento de Horarios</h4> </a></li>
+                            <li><a href="frmMantHorario.php"> <h4 class="mb"><i class="fa fa-cogs"></i> Mantenimiento de Horarios</h4> </a></li>
                             <li><a href="frmMantPais.php"> <h4 class="mb"><i class="fa fa-cogs"></i> Mantenimiento de Paises</h4> </a></li>
                             <li><a href="frmMantTurno.php"> <h4 class="mb"><i class="fa fa-cogs"></i> Mantenimiento de Turnos</h4> </a></li>
                         </ul>
