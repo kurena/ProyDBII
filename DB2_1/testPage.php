@@ -9,9 +9,9 @@
 
 <?php include("footer.php"); ?>
 
-    <script type="application/javascript">
-    $( document ).ready(function() {
-        initLogic.init();
-        initComponents.init();
-    });
-    </script>
+<script type="application/javascript">
+$( document ).ready(function() {
+    initLogic.init();
+    initComponents.init();
+});
+</script>

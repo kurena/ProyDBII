@@ -4,9 +4,7 @@ var initControls = function() {
             this.loadData();
             var self = this;
             $("#add").click(function(){
-                $(".content-panel").hide();
-                $(".form-panel").show();
-                $("#add").hide();
+                $('#paisModal').modal('show');
                 $('.addUpd').html("<i class='fa fa-check'></i> Añadir");
                 $('h4.mb').text('Ingresar datos');
                 $('#nomPais').val('');
@@ -14,9 +12,7 @@ var initControls = function() {
 
             });
             $(".back").click(function() {
-                $(".content-panel").show();
-                $(".form-panel").hide();
-                $("#add").show();
+                $('#paisModal').modal('hide');
 
             });
         },
@@ -58,7 +54,7 @@ function addModPais() {
     var $name = $('#nomPais'),
         $cod = $('#codTelef'),
         JSONvar = {};
-    JSONvar['genericMethod'] = $('.addUpd').text() === ' Agregar' ? 'agregar' : 'actualizar';
+    JSONvar['genericMethod'] = $('.addUpd').text() === ' Añadir' ? 'agregar' : 'actualizar';
     JSONvar['nomPais'] = $name.val();
     JSONvar['numPais'] = $('.addUpd').attr('data-value') ? $('.addUpd').attr('data-value') : '';
     JSONvar['codPais'] = $cod.val();
@@ -72,9 +68,7 @@ function addModPais() {
         success:  function (response) {
             console.log(response);
             if (response === 'Done') {
-                $(".content-panel").show();
-                $(".form-panel").hide();
-                $("#add").show();
+                $('#paisModal').modal('hide');
                 window.location.reload(true);
             }else {
                 fnShowMessage('Error.', 'El pais ya existe, intente de nuevo', 'assets/img/warninAlert.png', false,3000);
@@ -87,9 +81,7 @@ function addModPais() {
 }
 
 function getPaisById($el) {
-    $(".content-panel").hide();
-    $(".form-panel").show();
-    $("#add").hide();
+    $('#paisModal').modal('show');
     $('.addUpd').html("<i class='fa fa-check'></i> Actualizar");
     $('h4.mb').text('Actualizar datos');
     var valSearch = $el.attributes[1].value,
@@ -126,9 +118,6 @@ function remPais($el) {
             },
             success:  function (response) {
                 if (response === 'Done') {
-                    $(".content-panel").show();
-                    $(".form-panel").hide();
-                    $("#add").show();
                     window.location.reload(true);
                 }
             }

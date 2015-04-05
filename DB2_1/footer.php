@@ -1,4 +1,4 @@
-</section><! --/wrapper -->
+    </section><! --/wrapper -->
       </section><!-- /MAIN CONTENT -->
 
       <!--main content end-->
@@ -22,6 +22,8 @@
     <!--common script for all pages-->
     <script src="assets/js/common-scripts.js"></script>
     <script type="application/javascript" src="assets/js/controllers/blanckPageController.js"></script>
+
+    <script type="text/javascript" src="assets/js/datePicker/bootstrap-datepicker.js"></script>
 
   </body>
 </html>

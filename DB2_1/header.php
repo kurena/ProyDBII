@@ -17,9 +17,14 @@
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/datePicker/datepicker.css" />
   </head>
 
   <body>
+  <style>
+      .datepicker{z-index:1151 !important;}
+  </style>
 
   <!-- Modal -->
   <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="profileModalInfo" class="modal fade">
@@ -87,22 +92,17 @@
                   </li>
 
                   <li>
-                      <a href="#">
+                      <a href="frmAsignarNotas.php">
                           <i class="fa fa-pencil-square-o"></i>
                           <span>Asigacion de Notas</span>
                       </a>
                   </li>
 
-                  <li class="sub-menu">
-                      <a href="javascript:;">
-                          <i class="fa fa-book"></i>
-                          <span>Mantenimientos</span>
+                  <li>
+                      <a href="frmMantenimientos.php">
+                          <i class="fa fa-wrench"></i>
+                          <span>Configuración</span>
                       </a>
-                      <ul class="sub">
-                          <li class="active"><a  href="frmMantTurno.php">Turno</a></li>
-                          <li><a  href="frmMantPais.php">Países</a></li>
-                          <li><a  href="#">Clase</a></li>
-                      </ul>
                   </li>
 
                   <li>
