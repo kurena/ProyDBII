@@ -120,9 +120,9 @@
                   </li>
 
                   <li>
-                      <a href="#">
+                      <a href="reportes.php">
                           <i class="fa fa-newspaper-o"></i>
-                          <span>Noticias</span>
+                          <span>Reportes</span>
                       </a>
                   </li>
 
