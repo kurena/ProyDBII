@@ -16,6 +16,10 @@ var initControls = function() {
                 $('#convBecaModal').modal('hide');
 
             });
+
+            $('#porcentaje').keyup(function () {
+                this.value = this.value.replace(/[^0-9\.]/g,'');
+            });
         },
         loadData : function() {
             var htmlTable = $("#ConvbecaTable").dataTable({

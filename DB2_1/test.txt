@@ -1,0 +1,5 @@
+    var HTMLTemp = "<div class="text-center">" +
+                   "<button class="btn btn-primary btn-xs" onclick="fnMantAula("2", "5")"><i class="fa fa-pencil"></i></button>" +
+                   "&nbsp&nbsp&nbsp&nbsp" +
+                   "<button class="btn btn-danger btn-xs"  onclick="fnMantAula("7", "8")"><i class="fa fa-trash-o"></i></button>" +
+                   "</div>";

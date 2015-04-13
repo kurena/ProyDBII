@@ -19,6 +19,8 @@
     <link href="assets/css/style-responsive.css" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="assets/css/datePicker/datepicker.css" />
+
+    <link rel="stylesheet" type="text/css" href="assets/js/gritter/css/jquery.gritter.css" />
   </head>
 
   <body>

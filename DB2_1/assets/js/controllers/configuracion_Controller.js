@@ -8,9 +8,8 @@
 var initConfiguracionControls = function(){
     return {
         init: function(){
-            var JSONvar = {};
-            var data = [],
-                data2 = [];
+            /*var JSONvar = {};
+            var data = [], data2 = [];
             JSONvar['genericMethod'] = 'getCursosPorCatedra';
             JSONvar['codCatedra'] = 1;
             $.ajax({
@@ -53,9 +52,7 @@ var initConfiguracionControls = function(){
                         colors: ['#3498db', '#2980b9', '#34495e']
                     });
                 }
-            });
-
-
+            });*/
         }
     };
 }();

@@ -80,5 +80,9 @@
 <script src="assets/js/controllers/gradoacad_controller.js"></script>
 <!--script for this page-->
 <script type="application/javascript">
-    initControls.init();
+    $( document ).ready(function() {
+        initLogic.init();
+        initComponents.init();
+        initControls.init();
+    });
 </script>

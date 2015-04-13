@@ -63,3 +63,66 @@ function fnTraerInfoPersona(){
 
     return returnJSON;
 }
+
+/* Params : plantilla, JSON de valores
+Funcion que recive una plantilla y los valores
+* JSON para reemplaarlos en los token de la plantilla*/
+function fnMakeHTML(str, col) {
+    col = typeof col === 'object' ? col : Array.prototype.slice.call(arguments, 1);
+
+    return str.replace(/\{\{|\}\}|\{(\w+)\}/g, function (m, n) {
+        if (m == "{{") {
+            return "{";
+        }
+        if (m == "}}") {
+            return "}";
+        }
+        return col[n];
+    });
+}
+
+/* Params : NA
+ Funcion que limpia todos los elemntos input
+ y textarea de div ForLoop
+* */
+function fnClearInputs(){
+    var container, inputs, index;
+
+    container = $('#for_loop');
+
+    inputs = container.find('input');
+
+    for (index = 0; index < inputs.length; ++index) {
+        var controlid = inputs[index].id;
+        $('#' + controlid).val("");
+    }
+
+    inputs = container.find('textarea');
+
+    for (index = 0; index < inputs.length; ++index) {
+        var controlid = inputs[index].id;
+        $('#' + controlid).val("");
+    }
+}
+
+/* Params : title, msg, img, stickyBool
+Funcion que crea una alerta indicando
+un error o un ejecucion exitosa en algun
+proceso de la Aplicacion
+*/
+function fnShowMessage(title, msg, img, stickyBool){
+    $.gritter.add({
+        // (string | mandatory) the heading of the notification
+        title: title,
+        // (string | mandatory) the text inside the notification
+        text: msg,
+        // (string | optional) the image to display on the left
+        image: img,
+        // (bool | optional) if you want it to fade out on its own or just sit there
+        sticky: stickyBool,
+        // (int | optional) the time you want it to be alive for before fading out
+        time: 1000,
+        // (string | optional) the class name you want to apply to that specific message
+        class_name: 'my-sticky-class'
+    });
+}
