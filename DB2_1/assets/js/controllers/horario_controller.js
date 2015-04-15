@@ -105,7 +105,8 @@ function getHorarioById($el) {
     });
 }
 function remHorario($el) {
-    if (confirm('Seguro que desea eliminar este dato?')) {
+    $('#confirmModal').modal('show');
+    $(".sendErase").click(function() {
         var JSONVAR = {},
             valSearch = $el.attributes[1].value;
         JSONVAR['genericMethod'] = 'remover';
@@ -123,9 +124,8 @@ function remHorario($el) {
                 }
             }
         });
-    } else {
-        // Do nothing!
-    }
+    });
+
 }
 function addValuesToSelect($sel, options) {
     $.each(options, function(index, value) {
