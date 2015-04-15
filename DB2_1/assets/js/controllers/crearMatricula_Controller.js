@@ -20,6 +20,10 @@ var initcrearMatricula_Controls = function(){
                 $('#findCatedraModal').modal('show');
             });
 
+            $('.sendMatricula').click(function(){
+                fnGestionarMatricula();
+            });
+
             $('#rootwizard').bootstrapWizard({
                 onTabShow: function(tab, navigation, index) {
                     var $total = navigation.find('li').length;
@@ -37,8 +41,10 @@ var initcrearMatricula_Controls = function(){
                             }
                             break;
                         case 2:
-                            if($("#formCedula").val() == "" || $('#formcodCatedra').val() == ""){
-                                fnShowMessage('Sistema de Matriculas', 'Debe de Indicar un Estudiante y una Catedra.', 'assets/img/errorAlert.png', false);
+                            var dataTable = $('#gruposDo').dataTable();
+                            var rowCount = dataTable.fnGetData().length;
+                            if(rowCount == 0){
+                                fnShowMessage('Sistema de Matriculas', 'Debe de Indicar Materias a Matricular.', 'assets/img/errorAlert.png', false);
                                 $(".previousbtn").trigger( "click" );
                             }else{
                                 $('.nextbtn').html('Finalizar');
@@ -306,4 +312,66 @@ function fnGetCostoMatricula(){
     $('.TelefonoClass').html('Telefono : ' + $('#formtel').val());
     $('.EmailClass').html('Email : ' + $('#formemail').val());
     $('.NaciClass').html('Nacimiento : ' + $('#formfecNaci').val());
+}
+
+function fnGestionarMatricula(){
+    var JSONvar = {};
+    JSONvar['genericMethod'] = 'crearMatricula';
+    JSONvar['tipoPago'] = $('#formTipoPago').val();
+    JSONvar['total'] = $('.totalVal').html().replace("₡", "");
+    JSONvar['subtotal'] = $('.subtotalVal').html().replace("₡", "");
+    JSONvar['desmatri'] = parseInt($('.descuentoVal').html().replace("%", ""))*100;
+    JSONvar['cedPersona'] = $('#formCedula').val();
+
+    console.log(JSONvar);
+
+    $.ajax({
+        data:  JSONvar,
+        url:   'assets/php/matricula_Logic.php',
+        type:  'post',
+        beforeSend: function () {
+            //Logic Here
+        },
+        success:  function (response) {
+            var data = JSON.parse(response);
+            if(!isNaN(data.resultQuery)){
+                var dataTable = $('#gruposDo').dataTable();
+                fnShowMessage('Sistema de Matriculas', 'Se reguistro la Matricula.', 'assets/img/successAlert.png', false);
+
+                $.each( dataTable.fnGetData(), function(i, row){
+                    fnGestionarDetalleMatricula(data.resultQuery, row[0], row[8], row[2])
+                })
+            }else{
+                fnShowMessage('Sistema de Matriculas', 'Error al reguistrar la Matricula.', 'assets/img/errorAlert.png', false);
+            }
+        }
+    }).done(function() {});
+}
+
+function fnGestionarDetalleMatricula(numMatri, numGrupo, cosCosto, nomMateria){
+    var JSONvar = {};
+    JSONvar['genericMethod'] = 'crearDetalleMatricula';
+    JSONvar['numMatricula'] = numMatri;
+    JSONvar['numGrupo'] = numGrupo;
+    JSONvar['costoGrupo'] = cosCosto;
+
+    $.ajax({
+        data:  JSONvar,
+        url:   'assets/php/matricula_Logic.php',
+        type:  'post',
+        beforeSend: function () {
+            //Logic Here
+        },
+        success:  function (response) {
+            console.log(response);
+            var data = JSON.parse(response);
+            if(data.resultQuery == 'Win'){
+                fnShowMessage('Sistema de Matriculas', 'Se reguistro ' + nomMateria + ' correctamente.', 'assets/img/successAlert.png', false);
+            }else{
+                fnShowMessage('Sistema de Matriculas', 'Error al reguistrar el Detalle.', 'assets/img/errorAlert.png', false);
+            }
+
+            setInterval(function () {window.location = "index.html"}, 3000);
+        }
+    }).done(function() {});
 }

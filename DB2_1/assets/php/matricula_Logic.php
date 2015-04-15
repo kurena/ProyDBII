@@ -12,6 +12,18 @@ switch ($_POST['genericMethod']) {
     case "listarPersonas":
         fnListPersonas();
         break;
+    case "crearMatricula":
+        fnCrearMatrcula($_POST['tipoPago'],
+                        $_POST['total'],
+                        $_POST['subtotal'],
+                        $_POST['desmatri'],
+                        $_POST['cedPersona']);
+        break;
+    case "crearDetalleMatricula":
+        fnCrearDetalleMatricula($_POST['numMatricula'],
+                                $_POST['numGrupo'],
+                                $_POST['costoGrupo']);
+        break;
 }
 
 function fnListPersonas(){
@@ -44,5 +56,69 @@ function fnListPersonas(){
     Conexion::desconectar();
 
     echo json_encode($personaArray);
+
+}
+
+function fnCrearMatrcula($tipoPago,
+                          $total,
+                          $subtotal,
+                          $desmatri,
+                          $cedPersona){
+    $linkConnection = Conexion::getInstancia();
+
+    $sql = 'BEGIN
+                packMatricula_MatriculaDetalle.matGestionarMatricula(:v_tipoPago,
+                                                                     :v_total,
+                                                                     :v_subtotal,
+                                                                     :v_desmatri,
+                                                                     :v_cedPersona,
+                                                                     :resultOut);
+            END;';
+
+    $stmt = oci_parse($linkConnection,$sql);
+
+    oci_bind_by_name($stmt,':v_tipoPago',$tipoPago,32);
+    oci_bind_by_name($stmt,':v_total',$total,32);
+    oci_bind_by_name($stmt,':v_subtotal',$subtotal,32);
+    oci_bind_by_name($stmt,':v_desmatri',$desmatri,32);
+    oci_bind_by_name($stmt,':v_cedPersona',$cedPersona,32);
+    oci_bind_by_name($stmt,':resultOut',$resultQuery,32);
+
+    oci_execute($stmt);
+
+    $arr = array('resultQuery' => $resultQuery);
+
+    Conexion::desconectar();
+
+    echo json_encode($arr);
+
+}
+
+function fnCrearDetalleMatricula($numMatricula,
+                                 $numGrupo,
+                                 $costoGrupo){
+    $linkConnection = Conexion::getInstancia();
+
+    $sql = 'BEGIN
+                packMatricula_MatriculaDetalle.matGestionDetalleMatricula(:v_numMatricula,
+                                                                          :v_numgrupo,
+                                                                          :v_costo,
+                                                                          :v_resultOut);
+            END;';
+
+    $stmt = oci_parse($linkConnection,$sql);
+
+    oci_bind_by_name($stmt,':v_numMatricula',$numMatricula,32);
+    oci_bind_by_name($stmt,':v_numgrupo',$numGrupo,32);
+    oci_bind_by_name($stmt,':v_costo',$costoGrupo,32);
+    oci_bind_by_name($stmt,':v_resultOut',$resultQuery,32);
+
+    oci_execute($stmt);
+
+    $arr = array('resultQuery' => $resultQuery);
+
+    Conexion::desconectar();
+
+    echo json_encode($arr);
 
 }

@@ -328,26 +328,24 @@
                                                     <div class="row form-group">
                                                         <label class="col-sm-2 col-sm-2 control-label">Tipo de Pago</label>
                                                         <div class="col-sm-10">
-                                                            <select class="form-control" id="formCoordinador" name="formCoordinador">
-                                                                <option value="Contado">Contado</option>
-                                                                <option value="Letra de Cambio">Letra de Cambio</option>
+                                                            <select class="form-control" id="formTipoPago" name="formTipoPago">
+                                                                <option value="efectivo">Efectivo</option>
+                                                                <option value="tarjeta">Tarjeta</option>
                                                             </select>
                                                         </div>
                                                     </div>
-                                                    <div class="row form-group">
+                                                    <div class="row form-group" style="display: none">
                                                         <label class="col-sm-2 col-sm-2 control-label">Detalle de Matricula</label>
                                                         <div class="col-sm-10">
-                                                            <textarea class="form-control" rows="5" id="formdesCatedra" style="resize:none" maxlength="100"></textarea>
+                                                            <textarea class="form-control" rows="5" id="formdesMatricula" style="resize:none" maxlength="100"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <!--;-->
                                                 <div class="col-lg-6 text-center">
-                                                    <div class="row form-group">
-                                                        <h4><i class="fa fa-paper-plane-o text-primary"></i> Enviar.</h4>
-                                                    </div>
+                                                    <h4><i class="fa fa-paper-plane-o text-primary"></i> Enviar.</h4>
+                                                    <button class="btn col-lg-12 btn-primary sendMatricula" type="button"> Enviar Matricula.</button>
                                                     <!--<div class="row form-group">-->
-                                                        <button class="btn col-lg-12 btn-primary sendMatricula" type="button"> Enviar Matricula.</button>
                                                     <!--</div>-->
                                                 </div>
                                             </div>
