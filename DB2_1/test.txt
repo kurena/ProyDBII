@@ -1,5 +1,9 @@
-    var HTMLTemp = "<div class="text-center">" +
-                   "<button class="btn btn-primary btn-xs" onclick="fnMantAula("2", "5")"><i class="fa fa-pencil"></i></button>" +
-                   "&nbsp&nbsp&nbsp&nbsp" +
-                   "<button class="btn btn-danger btn-xs"  onclick="fnMantAula("7", "8")"><i class="fa fa-trash-o"></i></button>" +
-                   "</div>";
+                                                    <div class="row form-group">
+                                                        <label class="col-sm-2 col-sm-2 control-label">Tipo de Pago</label>
+                                                        <div class="col-sm-10">
+                                                            <select class="form-control" id="formCoordinador" name="formCoordinador">
+                                                                <option value="Contado">Contado</option>
+                                                                <option value="Letra de Cambio">Letra de Cambio</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>

@@ -62,7 +62,7 @@
             <div class="top-menu">
               <ul class="nav pull-right top-menu">
                   <li><a class="logout" href="login.html">Salir de Sesión</a></li>
-                  <li><a class="blockSession" href="lock_screen.html">Bloquear</a></li>
+                  <!--<li><a class="blockSession" href="lock_screen.html">Bloquear</a></li>-->
               </ul>
             </div>
       </header>
@@ -104,13 +104,6 @@
                       <a href="frmMantenimientos.php">
                           <i class="fa fa-wrench"></i>
                           <span>Configuración</span>
-                      </a>
-                  </li>
-
-                  <li>
-                      <a href="#">
-                          <i class="fa fa-clock-o"></i>
-                          <span>Horarios</span>
                       </a>
                   </li>
 

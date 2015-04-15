@@ -10,7 +10,7 @@
                 <div class="modal-body" id="for_loop">
                     <h4><i class="fa fa-angle-right"></i> Datos Grupo</h4><br/>
 
-                    
+
 
                 </div>
                 <div class="modal-footer">

@@ -12,6 +12,9 @@ switch ($_POST['genericMethod']) {
     case "selPersonaByID":
         fnGetPersonByID($_POST['numPersona']);
         break;
+    case "getDescuento":
+        fnGetDescuento($_POST['cedPersona']);
+        break;
 }
 
 function fnGetPersonByID($numPersona){
@@ -42,4 +45,25 @@ function fnGetPersonByID($numPersona){
     echo json_encode($personaArray);
 
     Conexion::desconectar();
+}
+
+function fnGetDescuento($cedPersona){
+    $linkConnection = Conexion::getInstancia();
+    $sql = 'BEGIN
+                pack_PERSONA.matDescuentoEstudiante(:cedPersonaIn,
+                                                    :resultOut);
+            END;';
+
+    $stmt = oci_parse($linkConnection,$sql);
+
+    oci_bind_by_name($stmt,':cedPersonaIn',$cedPersona,32);
+    oci_bind_by_name($stmt,':resultOut',$resultQuery,32);
+
+    oci_execute($stmt);
+
+    $arr = array('resultQuery' => $resultQuery);
+
+    Conexion::desconectar();
+
+    echo json_encode($arr);
 }
