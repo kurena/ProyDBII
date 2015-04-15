@@ -54,6 +54,23 @@
             </div>
         </div>
     </div>
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="confirmModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">  Confirmación de Acción</h4>
+            </div>
+            <div class="modal-body" id="for_loop">
+                <h4><i class="fa fa-angle-right"></i> Seguro que desea eliminar el registro?.</h4><br/>
+            </div>
+            <div class="modal-footer">
+                <button data-dismiss="modal" class="btn btn-default" type="button">Cancelar</button>
+                <button data-dismiss="modal" class="btn btn-theme sendErase" type="button">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <?php include("footer.php"); ?>
 <!-- js placed at the end of the document so the pages load faster -->

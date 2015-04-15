@@ -104,7 +104,8 @@ function getPaisById($el) {
     });
 }
 function remPais($el) {
-    if (confirm('Seguro que desea eliminar este dato?')) {
+    $('#confirmModal').modal('show');
+    $(".sendErase").click(function() {
         var JSONVAR = {},
             valSearch = $el.attributes[1].value;
         JSONVAR['genericMethod'] = 'remover';
@@ -122,7 +123,6 @@ function remPais($el) {
                 }
             }
         });
-    } else {
-        // Do nothing!
-    }
+    });
+
 }

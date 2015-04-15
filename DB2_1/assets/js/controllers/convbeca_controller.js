@@ -112,7 +112,8 @@ function getConvbecaById($el) {
     });
 }
 function remConvbeca($el) {
-    if (confirm('Seguro que desea eliminar este dato?')) {
+    $('#confirmModal').modal('show');
+    $(".sendErase").click(function() {
         var JSONVAR = {},
             valSearch = $el.attributes[1].value;
         JSONVAR['genericMethod'] = 'remover';
@@ -130,7 +131,7 @@ function remConvbeca($el) {
                 }
             }
         });
-    } else {
-        // Do nothing!
-    }
+    });
+
+
 }

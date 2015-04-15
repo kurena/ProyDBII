@@ -104,7 +104,8 @@ function getTurnoById($el) {
     });
 }
 function remTurno($el) {
-    if (confirm('Seguro que desea eliminar este dato?')) {
+    $('#confirmModal').modal('show');
+    $(".sendErase").click(function() {
         var JSONVAR = {},
             valSearch = $el.attributes[1].value;
         JSONVAR['genericMethod'] = 'remover';
@@ -122,7 +123,6 @@ function remTurno($el) {
                 }
             }
         });
-    } else {
-        // Do nothing!
-    }
+    });
+
 }
